@@ -392,7 +392,7 @@ def init(transport):
         # wait between close and open it all goes fine until the wait
         # time reaches 3 seconds, and so on.
         initial_timeout = 100   # milliseconds
-        change_baudrate = True  # try higher speeds
+        change_baudrate = False  # try higher speeds
         if sys.platform.startswith('linux'):
             board = b""  # Raspi board will identify through device tree
             try:
