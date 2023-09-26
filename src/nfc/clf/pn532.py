@@ -206,9 +206,13 @@ class Device(pn53x.Device):
         data = bytearray.fromhex("69 FF 3F 11 41 85 61 6F")
         self.chipset.rf_configuration(0x0B, data)
 
+        """ This breaks reading B tags. Defaults are FF 17 85, the
+        changed middle byte influences "the impedance of the P driver"
+        and seems hardware dependent, so why is this changed here?
         self.log.debug("write analog settings for Type B 106 kbps")
         data = bytearray.fromhex("FF 04 85")
         self.chipset.rf_configuration(0x0C, data)
+        """
 
         self.log.debug("write analog settings for 14443-4 212/424/848 kbps")
         data = bytearray.fromhex("85 15 8A 85 08 B2 85 01 DA")
