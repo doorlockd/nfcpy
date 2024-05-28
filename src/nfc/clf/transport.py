@@ -47,7 +47,7 @@ except ImportError:  # pragma: no cover
 import logging
 log = logging.getLogger(__name__)
 
-PATH = re.compile(r'^([a-z]+)(?::|)([a-zA-Z0-9-]+|)(?::|)([a-zA-Z0-9]+|)$')
+PATH = re.compile(r'^([a-z]+)(?::|)([a-zA-Z0-9-.]+|)(?::|)([a-zA-Z0-9]+|)$')
 
 
 class TTY(object):
